@@ -15,6 +15,7 @@
 
   </section>
 </footer>
+{{ if .Site.Params.fixedBar }}
 <div class="fixed-bar">
   <section class="container">
     {{ with .Site.Params.fixedbarContent }}
@@ -30,3 +31,4 @@
     {{ end }}
   </section>
 </div>
+{{ end }}
