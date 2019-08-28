@@ -1,10 +1,12 @@
 <nav class="navigation">
+  <script async src="https://cse.google.com/cse.js?cx=004067976991485788323:mygejxgzzzh"></script>
   <section class="container">
     <a class="navigation-title" href="{{ print "/" | relLangURL }}">{{ .Site.Title }}</a>
     <input type="checkbox" id="menu-control"/>
     <label class="menu-mobile {{ if $.Site.Params.rtl }} float-left {{ else }} float-right {{ end }}" for="menu-control">
       <span class="btn-mobile {{ if $.Site.Params.rtl }} float-left {{ else }} float-right {{ end }}">&#9776;</span>
       <ul class="navigation-list">
+
         {{ with .Site.Menus.main}}
           {{ range sort . }}
             <li class="navigation-item {{ if $.Site.Params.itemscentered }} align-center {{ else }} {{ if $.Site.Params.rtl }} align-right {{ else }} align-left {{ end }} {{ end }}">
@@ -36,7 +38,28 @@
             {{ end }}
           {{ end }}
         {{ end }}
+              <li class="navigation-item  align-center">
+                  <form action="http://google.com/search" target="_blank">
+                    <input name="sitesearch" type="hidden" value="bigzhu.net">
+                    <input name="q" type="text" autocomplete="on" placeholder="search" onkeyup="if(event.keyCode==13){this.submit()}"/>
+                  </form>
+              </li>
       </ul>
     </label>
   </section>
 </nav>
+<style>
+  input{
+    outline:none;
+  }
+.navigation form {
+    padding-left: 2rem;
+    display: inline;
+    font-size: 1.6rem;
+    line-height: 6rem;
+    letter-spacing: 0.1rem;
+}
+.navigation form input {
+  padding: 0.5rem;
+}
+</style>
